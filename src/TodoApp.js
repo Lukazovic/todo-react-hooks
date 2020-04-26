@@ -25,6 +25,13 @@ export default function TodoApp() {
     setTodos(updatedTodos);
   };
 
+  const editTodo = (todoId, newTask) => {
+    const updatedTodos = todos.map(todo =>
+      todo.id === todoId ? { ...todo, task: newTask } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
   const toggleCompletitionTodo = todoId => {
     const updatedTodos = todos.map(todo =>
       todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
@@ -54,6 +61,7 @@ export default function TodoApp() {
             <TodoList
               todos={todos}
               removeTodo={removeTodo}
+              editTodo={editTodo}
               toggleCompletitionTodo={toggleCompletitionTodo}
             />
           </Grid>

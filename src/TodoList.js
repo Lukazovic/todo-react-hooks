@@ -7,6 +7,7 @@ import Todo from "./Todo";
 export default function TodoList({
   todos,
   removeTodo,
+  editTodo,
   toggleCompletitionTodo,
 }) {
   return (
@@ -20,6 +21,7 @@ export default function TodoList({
               task={todo.task}
               completed={todo.completed}
               removeTodo={removeTodo}
+              editTodo={editTodo}
               toggleCompletitionTodo={toggleCompletitionTodo}
             />
             <Divider />
